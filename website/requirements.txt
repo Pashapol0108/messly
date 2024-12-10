@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+uvicorn
+sqlalchemy
+pydantic
+jose
+passlib[bcrypt]
+requests
+psycopg2-binary
+uvicorn[gunicorn]
+websockets
+python-jose==3.3.0
+python-multipart

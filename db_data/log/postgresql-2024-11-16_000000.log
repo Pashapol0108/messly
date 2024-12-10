@@ -1,0 +1,23 @@
+2024-11-17 15:47:38.177 MSK [21225] FATAL:  database "messly_user" does not exist
+2024-11-17 15:48:01.163 MSK [21235] FATAL:  role "messlydb" does not exist
+2024-11-17 15:50:25.119 MSK [21257] ERROR:  syntax error at or near "/" at character 1
+2024-11-17 15:50:25.119 MSK [21257] STATEMENT:  /dt
+	SELECT * FROM users;
+2024-11-17 19:29:27.417 MSK [24994] ERROR:  syntax error at or near "*" at character 8
+2024-11-17 19:29:27.417 MSK [24994] STATEMENT:  DELETE * FROM messages;
+2024-11-17 19:29:54.066 MSK [24994] ERROR:  syntax error at or near "ALL" at character 8
+2024-11-17 19:29:54.066 MSK [24994] STATEMENT:  DELETE ALL FROM messages;
+2024-11-17 21:54:10.111 MSK [24994] ERROR:  function json_extract_path_text(character varying, unknown) does not exist at character 32
+2024-11-17 21:54:10.111 MSK [24994] HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+2024-11-17 21:54:10.111 MSK [24994] STATEMENT:  UPDATE messages 
+	SET content = json_extract_path_text(content, 'content') 
+	WHERE content LIKE '{"content%';
+2024-11-17 21:55:57.571 MSK [24994] ERROR:  cannot truncate a table referenced in a foreign key constraint
+2024-11-17 21:55:57.571 MSK [24994] DETAIL:  Table "message_reactions" references "messages".
+2024-11-17 21:55:57.571 MSK [24994] HINT:  Truncate table "message_reactions" at the same time, or use TRUNCATE ... CASCADE.
+2024-11-17 21:55:57.571 MSK [24994] STATEMENT:  TRUNCATE TABLE messages RESTART IDENTITY;
+2024-11-17 21:56:35.470 MSK [24994] ERROR:  syntax error at or near "ALL" at character 8
+2024-11-17 21:56:35.470 MSK [24994] STATEMENT:  DELETE ALL FROM messages;
+2024-11-17 22:03:19.183 MSK [24994] ERROR:  syntax error at or near "SELECT" at character 24
+2024-11-17 22:03:19.183 MSK [24994] STATEMENT:  SELECT * FROM messages
+	SELECT * FROM messages;

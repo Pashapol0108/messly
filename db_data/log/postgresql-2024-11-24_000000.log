@@ -1,0 +1,2 @@
+2024-11-26 16:28:14.375 MSK [32565] ERROR:  syntax error at or near "WHERE" at character 46
+2024-11-26 16:28:14.375 MSK [32565] STATEMENT:  INSERT INTO users (status) VALUES ('online') WHERE id = 0;

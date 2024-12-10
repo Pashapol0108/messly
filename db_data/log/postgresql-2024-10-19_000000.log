@@ -1,0 +1,6 @@
+2024-10-19 19:28:13.485 MSK [74629] ERROR:  duplicate key value violates unique constraint "User_user_name_key"
+2024-10-19 19:28:13.485 MSK [74629] DETAIL:  Key (user_name)=(Павел Поляков) already exists.
+2024-10-19 19:28:13.485 MSK [74629] STATEMENT:  INSERT INTO "User" (user_name, email, password, subscription_level) VALUES ('Павел Поляков', 'w@w.w', '$2b$12$UXb15wG6A9agaCodvsZIQeW9k/rpTQO.cx.Z/yyKfKbSrvvAFdLJe', 'Free') RETURNING "User".user_id
+2024-10-19 21:42:43.203 MSK [76107] LOG:  unexpected EOF on client connection with an open transaction
+2024-10-19 22:05:08.068 MSK [76348] LOG:  unexpected EOF on client connection with an open transaction
+2024-10-19 22:08:32.995 MSK [76364] LOG:  unexpected EOF on client connection with an open transaction

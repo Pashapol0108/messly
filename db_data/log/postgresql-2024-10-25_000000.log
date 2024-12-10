@@ -1,0 +1,5 @@
+2024-10-30 18:57:32.672 MSK [52999] ERROR:  syntax error at or near "*" at character 1
+2024-10-30 18:57:32.672 MSK [52999] STATEMENT:  *
+	SELECT * FROM messages;
+2024-10-30 19:04:57.281 MSK [52999] ERROR:  syntax error at or near "messages" at character 8
+2024-10-30 19:04:57.281 MSK [52999] STATEMENT:  DELETE messages;

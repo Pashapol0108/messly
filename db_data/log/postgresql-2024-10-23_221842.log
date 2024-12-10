@@ -1,0 +1,6 @@
+2024-10-23 22:18:42.062 MSK [15389] LOG:  starting PostgreSQL 14.13 (Homebrew) on aarch64-apple-darwin23.4.0, compiled by Apple clang version 15.0.0 (clang-1500.3.9.4), 64-bit
+2024-10-23 22:18:42.063 MSK [15389] LOG:  listening on IPv6 address "::1", port 5432
+2024-10-23 22:18:42.063 MSK [15389] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2024-10-23 22:18:42.064 MSK [15389] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2024-10-23 22:18:42.075 MSK [15395] LOG:  database system was shut down at 2024-10-23 22:14:23 MSK
+2024-10-23 22:18:42.079 MSK [15389] LOG:  database system is ready to accept connections

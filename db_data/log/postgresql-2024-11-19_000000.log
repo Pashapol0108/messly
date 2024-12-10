@@ -1,0 +1,7 @@
+2024-11-19 13:34:11.199 MSK [40247] ERROR:  invalid input syntax for type integer: "ArinaZ" at character 73
+2024-11-19 13:34:11.199 MSK [40247] STATEMENT:  INSERT INTO chat_members (chat_id, user_id, role, added_at) VALUES (12, 'ArinaZ', 'member', '2024-11-19T10:34:11.198241'::timestamp)
+2024-11-19 13:34:13.065 MSK [40250] ERROR:  invalid input syntax for type integer: "ArinaZ" at character 73
+2024-11-19 13:34:13.065 MSK [40250] STATEMENT:  INSERT INTO chat_members (chat_id, user_id, role, added_at) VALUES (12, 'ArinaZ', 'member', '2024-11-19T10:34:13.064622'::timestamp)
+2024-11-19 14:20:52.968 MSK [32565] ERROR:  column "messly" does not exist at character 85
+2024-11-19 14:20:52.968 MSK [32565] STATEMENT:  INSERT INTO users (id, username, email, hashed_password, role) VALUES (0, 'Messly', messly@messly.messly, '', 'system')
+	;
