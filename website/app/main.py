@@ -124,12 +124,14 @@ def login(email: str = Form(...), password: str = Form(...), db: Session = Depen
     access_token = create_access_token(data={"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer", "username": user.username}
 
+
 @app.post("/logout")
 def logout(user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     # Обновляем статус пользователя на "оффлайн"
     user.status = "offline"
     db.commit()
     return {"message": "User logged out successfully"}
+
 
 @app.get("/me")
 def get_me(user: User = Depends(get_current_user)):
@@ -545,6 +547,8 @@ def update_username(
     db.refresh(current_user)
     return {"message": "Username updated successfully", "username": request.username}
 
+
+
 @app.put("/profile/update_description")
 def update_description(
     request: UpdateDescriptionRequest,
@@ -579,12 +583,14 @@ def get_chat_members(chat_id: int, user: User = Depends(get_current_user), db: S
     ]
 
 
+
 @app.get("/chats/{chat_id}/is_member")
 def is_member(chat_id: int, db: Session = Depends(get_db), user=Depends(get_current_user)):
     member = db.query(ChatMember).filter_by(chat_id=chat_id, user_id=user.id).first()
     if member:
         return {"is_member": True}
     return {"is_member": False}
+
 
 
 @app.delete("/chats/{chat_id}/leave")
@@ -711,6 +717,8 @@ def upload_chat_photo(
     return {"detail": "Chat photo uploaded successfully", "photo": chat.photo}
 
 
+
+
 @app.get("/chats/{chat_id}")
 def get_chat_info(chat_id: int, db: Session = Depends(get_db)):
     chat = db.query(Chat).filter(Chat.id == chat_id).first()
@@ -725,6 +733,8 @@ def get_chat_info(chat_id: int, db: Session = Depends(get_db)):
             for member in chat.members
         ],
     }
+
+
 
 @app.put("/chats/{chat_id}/update-name/")
 def update_chat_name(
@@ -785,6 +795,8 @@ async def upload_file(
         raise HTTPException(status_code=500, detail=f"Failed to save file: {str(e)}")
 
 
+
+
 @app.delete("/delete-file/")
 async def delete_file(file_url: str, user: User = Depends(get_current_user)):
     filepath = os.path.join(BASE_DIR, file_url)
@@ -797,6 +809,7 @@ async def delete_file(file_url: str, user: User = Depends(get_current_user)):
         return {"detail": "File deleted successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error deleting file: {str(e)}")
+
 
 
 
@@ -852,6 +865,8 @@ def get_users_for_admin(
         "email": u.email,
         "role": u.role,
     } for u in users]
+
+
 
 @app.put("/users/{user_id}/update/")
 def update_user(

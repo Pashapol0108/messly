@@ -1,0 +1,5 @@
+2024-12-11 01:05:09.848 MSK [1] LOG:  received fast shutdown request
+2024-12-11 01:05:09.848 MSK [1] LOG:  aborting any active transactions
+2024-12-11 01:05:09.850 MSK [1] LOG:  background worker "logical replication launcher" (PID 35) exited with exit code 1
+2024-12-11 01:05:09.850 MSK [30] LOG:  shutting down
+2024-12-11 01:05:09.859 MSK [1] LOG:  database system is shut down
