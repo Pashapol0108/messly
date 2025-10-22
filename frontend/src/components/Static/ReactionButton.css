@@ -1,0 +1,65 @@
+.reaction-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.reaction-right {
+  margin-left: 3px; /* Отступ от сообщения справа */
+  justify-content: flex-start; /* Автоматическое выравнивание */
+}
+
+.reaction-left {
+  margin-right: 3px; /* Отступ от сообщения слева */
+  justify-content: flex-end; /* Автоматическое выравнивание */
+}
+
+.reaction-container.reaction-right {
+  display: flex;
+  flex-direction: row; /* Инвертируем порядок */
+  align-items: center;
+}
+
+.reaction-container.reaction-left {
+  display: flex;
+  flex-direction: row-reverse; /* Обычный порядок */
+  align-items: center;
+}
+
+.reaction-button {
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0; /* Скрыта по умолчанию */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.reaction-button:hover {
+  opacity: 1; /* Показываем при наведении */
+}
+
+.reaction-button.active {
+  opacity: 1; /* Всегда видима, если активна */
+}
+
+.reaction-avatars {
+  display: flex;
+  align-items: center;
+  margin-left: 2px;
+}
+
+.reaction-avatar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 2px;
+  border: 0.5px solid #be64ff;
+}
+
+.reaction-count {
+  font-size: 14px;
+  color: #be64ff;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid #be64ff;
+}

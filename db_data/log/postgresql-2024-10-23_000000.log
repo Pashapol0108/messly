@@ -1,4 +1,0 @@
-2024-10-23 22:14:23.460 MSK [53672] LOG:  received smart shutdown request
-2024-10-23 22:14:23.468 MSK [53672] LOG:  background worker "logical replication launcher" (PID 53680) exited with exit code 1
-2024-10-23 22:14:23.468 MSK [53675] LOG:  shutting down
-2024-10-23 22:14:23.482 MSK [53672] LOG:  database system is shut down

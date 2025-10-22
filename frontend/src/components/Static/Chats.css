@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+.chats-page {
+  display: flex; /* Основная горизонтальная компоновка */
+  height: 100vh; /* Высота экрана */
+  overflow: hidden; /* Убираем скроллинг */
+  background-color: #2d253a
+}
+
+.left-panel {
+  width: 30%; /* Левый блок (ChatUser + ChatList) занимает 30% ширины */
+  max-width:320px;
+  display: flex;
+  flex-direction: column; /* Вертикальная компоновка */
+  border-right: 1px solid #be64ff; /* Разделительная линия */
+  background-color: #2d253a; /* Светлый фон */
+  overflow: hidden; /* Убираем выход за пределы */
+  box-sizing: border-box; /* Учитываем границы в ширине */
+}
+
+.chat-list {
+  flex: 1; /* Список чатов занимает оставшееся место */
+  padding: 10px; /* Отступы */
+  overflow-y: auto; /* Скроллинг для длинных списков */
+  overflow-x: hidden; /* Отключаем горизонтальный скроллинг */
+  box-sizing: border-box; /* Учитываем padding и границы */
+  word-wrap: break-word; /* Перенос слов, чтобы не выходили за границу */
+}
+
+.no-chat-selected {
+  display: flex;
+  flex-direction: column; /* Размещаем содержимое вертикально */
+  align-items: center; /* Центрируем содержимое по горизонтали */
+  justify-content: center; /* Центрируем содержимое по вертикали */
+  height: 100%; /* Занимаем всю высоту правой панели */
+  text-align: center; /* Центрируем текст */
+  font-size: 1.3rem;
+  color: #be64ff;
+  margin: 0 auto; /* Центрируем содержимое */
+  width: 100%; /* Убедитесь, что занимает всю ширину */
+  transform: translateY(-45px);
+  font-family: 'Poppins', sans-serif;
+}
+
+.no-chat-gif {
+  width: 200px; /* Ширина GIF */
+  height: auto; /* Сохраняем пропорции */
+  margin-bottom: 10px; /* Отступ между GIF и текстом */
+  transform: translateY(25px);
+}
+
+
+.chat-window-container {
+  display: flex;
+  flex: 1;
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  align-items: center; /* Центрируем содержимое по вертикали */
+  height: 100%; /* Убедитесь, что контейнер занимает всю высоту */
+  width: 70%; /* Убедитесь, что контейнер занимает всю ширину */
+  background: radial-gradient(#352e41 20%, transparent 21% ,transparent 79%, #352e41 80%);
+        background-size: 0.8em 0.8em;
+        background-color: #2d253a;
+        opacity: 1;
+}
+
+.chat-list-footer {
+  width: 100%;
+  background-color: #2d253a; /* Цвет фона футера */
+  color: #be64ff; /* Цвет текста */
+  text-align: center; /* Центрирование текста */
+  padding: 10px 0; /* Отступы сверху и снизу */
+  font-size: 1.6rem; /* Размер текста */
+  position: sticky; /* Фиксация футера */
+  bottom: 0; /* Прикрепление к нижней части контейнера */
+  font-weight: bold;
+  font-family: "Playwrite HR Lijeva", cursive;
+}
+
+
+

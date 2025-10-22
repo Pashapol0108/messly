@@ -1,0 +1,72 @@
+.admin-panel {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.admin-panel .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-panel .admin-header .logout-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.admin-panel .admin-header .logout-button:hover {
+    background-color: #d32f2f;
+}
+
+.admin-panel .admin-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.admin-panel .admin-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.admin-panel .chat-item, .message-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.admin-panel .user-section {
+    margin-top: 20px;
+}
+
+.admin-panel .filters {
+    margin-bottom: 10px;
+}
+
+.admin-panel .user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-panel .user-table th, .admin-panel .user-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.admin-panel button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-panel button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.chat-list-container {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto; /* Вертикальная прокрутка для длинных списков */
+  overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
+  box-sizing: border-box; /* Учитываем padding и границы */
+  background-color: #2d253a;
+}
+
+/* Создание чатов: поле ввода и кнопка */
+.chat-list-container .create-chat,
+.chat-list-container .create-personal-chat {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  max-width: 198px;
+}
+
+.chat-list-container .create-chat input,
+.chat-list-container .create-personal-chat input {
+  flex: 1;
+  padding: 4px;
+  padding-left: 6px;
+  border: 1px solid #be64ff;
+  border-radius: 5px;
+  background-color:#e4c1ff;
+  color: #6100a6; /* Цвет текста плейсхолдера */
+  font-size: 0.8rem;
+}
+.chat-list-container .create-chat input:focus,
+.chat-list-container .create-personal-chat input:focus{
+  outline: none;
+  border: 1px solid #be64ff; /* Устанавливаем свою границу */
+}
+
+.chat-list-container .create-chat input::placeholder,
+.chat-list-container .create-personal-chat input::placeholder {
+  color: #6100a6; /* Цвет текста плейсхолдера */
+  font-size: 0.7rem;
+}
+
+.chat-list-container .create-chat button,
+.chat-list-container .create-personal-chat button {
+  width: 25px;
+  height: 25px;
+  background-color: #e4c1ff; /* Светло-голубой фон */
+  border: 1px solid #be64ff;
+  color: #6100a6;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+
+}
+
+.chat-list-container .create-chat button:hover,
+.chat-list-container .create-personal-chat button:hover {
+  background-color: #d59eff;
+}
+
+/* Элемент списка чатов */
+.chat-list-container .chat-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-left: 5px;
+  border-bottom: 0.5px solid #be64ff;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.chat-list-container .chat-item:hover {
+  opacity: 0.7; /* Легкий эффект при наведении */
+}
+
+/* Аватар чата */
+.chat-list-container .chat-avatar,
+.chat-list-container .group-chat-avatar {
+  width: 30px; /* Размеры аватарки */
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #be64ff;
+}
+
+/* Детали чата */
+.chat-list-container .chat-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ограничиваем содержимое */
+}
+
+.chat-list-container .chat-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap; /* Отключаем перенос текста */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Обрезаем текст с троеточием */
+}
+.chat-list-container .chat-title .chat-username {
+  margin-right: 4px; /* Расстояние между именем и индикатором */
+  margin-bottom: 4px;
+  color:#be64ff;
+}
+
+.chat-list-container .chat-title .chat-group-title {
+  margin-right: 4px; /* Расстояние между именем и индикатором */
+  margin-bottom: 4px;
+  color:#be64ff;
+}
+
+.chat-list-container .chat-title .status-indicator {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+
+.chat-list-container .status-indicator.online {
+  background-color: #12E85C;
+}
+
+.chat-list-container .status-indicator.offline {
+  background-color: #B5B5B5;
+}
+
+/* Последнее сообщение */
+.chat-list-container .chat-last-message {
+  font-size: 13px;
+  color: #d59eff;
+  display: inline;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden; /* Обрезаем длинный текст */
+  white-space: nowrap; /* Отключаем перенос текста */
+  text-overflow: ellipsis; /* Добавляем троеточие */
+  padding: 0; /* Убираем внутренние отступы */
+  margin: 0; /* Убираем внешние отступы */
+}
+
+.chat-list-container .chat-last-message.unread-message-bg {
+  background-color: #d59eff;
+  border-radius: 3px;
+  padding: 0px 2px 2px 3px;
+  display: inline; /* Фон оборачивает только текст */
+  width: auto; /* Ширина автоматически подстраивается под текст */
+  color: #6100a6;
+}
+
+/* Метаданные чата */
+.chat-list-container .chat-meta {
+  display: flex;
+  flex-direction: column; /* Располагаем элементы вертикально */
+  align-items: center; /* Центрируем элементы по горизонтали */
+  justify-content: flex-start; /* Выравниваем элементы сверху */
+  flex-shrink: 0;
+  margin-top: 0px;
+  gap: 5px; /* Расстояние между временем и счетчиком */
+}
+
+.chat-list-container .chat-time {
+  font-size: 10px;
+  color: #be64ff;
+  margin-bottom: 0; /* Убираем лишнее смещение */
+}
+
+.chat-list-container .unread-count {
+  background-color: #e4c1ff; /* Светло-голубой фон */
+  color: #6100a6;
+  font-size: 9px; /* Немного меньше шрифт */
+  font-weight: bold;
+  padding: 4px; /* Уменьшаем внутренний отступ */
+  border-radius: 50%; /* Делаем счетчик полностью круглым */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 13px; /* Меньше размер круга */
+  width: 13px;
+  line-height: 1;
+  transform: translateY(2px);
+}
+
+.chat-list-container .messly-badge {
+  width: 19px; /* Размер значка */
+  height: 12px;
+  margin-left: -6px; /* Отступ от имени */
+  vertical-align: middle; /* Выравнивание по середине строки */
+}
+
+/* Стиль для вкладок */
+/* Контейнер для вкладок */
+.chat-list-container .chat-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Стиль для каждой вкладки */
+.chat-list-container .chat-tab {
+  padding: 5px 20px;
+  font-size: 11px;
+  background-color: #e4c1ff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative; /* Добавляем для позиционирования значка уведомления */
+  color: #6100a6;
+  border-color: #be64ff;
+}
+
+/* Эффект при наведении */
+.chat-list-container .chat-tab:hover {
+  background-color: #d59eff;
+}
+
+/* Активная вкладка */
+.chat-list-container .chat-tab.active {
+  background-color: #d59eff;
+  color: #2d253a; /* Темно-синий текст */
+  border-color: #be64ff;
+  text-decoration: underline dotted #b144ff;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* Значок с количеством непрочитанных сообщений */
+.chat-list-container .chat-tab .unread-count-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #CE1818; /* Красный цвет для значка */
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Тень для выделения значка */
+}
+
+.chat-list-container .chat-tab .unread-count-badge:empty {
+  display: none; /* Скрываем значок, если нет непрочитанных сообщений */
+}
+
+.chat-list-container::-webkit-scrollbar {
+  display: none; /* Скрывает скроллбар в Chrome, Safari и Edge */
+}
+

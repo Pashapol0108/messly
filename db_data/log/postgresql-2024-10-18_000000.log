@@ -1,3 +1,0 @@
-2024-10-19 19:24:08.963 MSK [74498] ERROR:  duplicate key value violates unique constraint "User_user_name_key"
-2024-10-19 19:24:08.963 MSK [74498] DETAIL:  Key (user_name)=(Павел Поляков) already exists.
-2024-10-19 19:24:08.963 MSK [74498] STATEMENT:  INSERT INTO "User" (user_name, email, password, subscription_level) VALUES ('Павел Поляков', 'w@w.w', '$2b$12$zyCQHfELXYCidtT4APQDEuKprndmEDhl5Cke69sKgNLvPbNbJ2jTm', 'Free') RETURNING "User".user_id

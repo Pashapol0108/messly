@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.chat-popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.chat-popup-content {
+  border: 1px solid #be64ff;
+  background-color: #2d253a;
+  padding: 20px;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.chat-popup-close {
+  margin-right: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #be64ff;
+  transition: color 0.3s;
+}
+.chat-popup-close:hover {
+  color: #f6a8e2;
+}
+
+.chat-popup-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  object-fit: cover;
+  border: 2px solid #be64ff;
+  background-color: #2d253a;
+}
+.chat-popup-name {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #be64ff;
+}
+
+.edit-chat-name-input {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  background-color: #e4c1ff;
+  padding: 5px;
+  border: 1px solid #be64ff;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color:#6100a6;
+}
+
+.save-chat-name-button {
+  padding: 7px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #be64ff; /* Синий фон */
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-chat-name-button:hover {
+  background: #ae3bff; /* Более насыщенный синий при наведении */
+}
+
+.change-photo-button {
+  font-family: 'Poppins', sans-serif;
+  padding: 7px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #be64ff; /* Синий фон */
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.change-photo-button:hover {
+  background: #ae3bff; /* Более насыщенный синий при наведении */
+}
+
+.chat-popup-members {
+  margin-top: 10px;
+  text-align: center;
+  color: #be64ff;
+}
+
+.chat-popup-members ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chat-popup-members li {
+  margin: 5px 0;
+}
+
+
+
+
+.chat-popup-actions {
+  display: flex;
+  justify-content: center; /* Центрируем по горизонтали */
+  gap: 20px; /* Расстояние между кнопками */
+  margin-top: 20px;
+  align-items: flex-start; /* Выровняем гифки по верху */
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column; /* Ставим элементы вертикально */
+  align-items: center; /* Центрируем по горизонтали */
+  justify-content: flex-end; /* Выровняем кнопку по низу */
+  height: 100px; /* Минимальная высота контейнера, чтобы кнопки были у края */
+}
+
+.action-gif {
+  width: 60px; /* Задаем размер гифки */
+  height: auto; /* Сохраняем пропорции */
+  margin-bottom: 10px; /* Отступ между гифкой и кнопкой */
+}
+
+.chat-popup-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #be64ff; /* Синий фон */
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.chat-popup-actions button:hover {
+  background: #ae3bff;
+}
+
+

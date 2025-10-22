@@ -1,1 +1,0 @@
-2024-11-05 19:00:40.406 MSK [15400] LOG:  stats_timestamp 2024-11-05 19:00:40.505434+03 is later than collector's time 2024-11-05 19:00:40.406661+03 for database 14088

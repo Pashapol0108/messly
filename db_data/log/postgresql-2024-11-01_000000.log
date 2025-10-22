@@ -1,4 +1,0 @@
-2024-11-03 17:42:04.940 MSK [73053] ERROR:  syntax error at or near "/" at character 1
-2024-11-03 17:42:04.940 MSK [73053] STATEMENT:  /ls
-	ls
-	DELETE FROM alembic_version;

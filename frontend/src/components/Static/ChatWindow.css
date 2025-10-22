@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: radial-gradient(#352e41 20%, transparent 21% ,transparent 79%, #352e41 80%);
+        background-size: 0.8em 0.8em;
+        background-color: #2d253a;
+        opacity: 1;
+}
+
+/* Заголовок чата */
+.chat-window .chat-header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Расстояние между элементами */
+  border-bottom: 1px solid #be64ff;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  background-color: #2d253a;
+  box-shadow: 0 15px 30px 10px rgba(0, 0, 0, .2);
+}
+
+.chat-window .chat-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid #be64ff;
+}
+
+.chat-window .chat-header-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  color:#be64ff;
+}
+
+.chat-window .chat-title-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Расстояние между названием и индикатором */
+}
+
+.chat-window .chat-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Обрезаем текст, если он слишком длинный */
+}
+
+.chat-window .status-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-bottom:-3px;
+}
+
+.chat-window .status-indicator.online {
+  background-color: #12E85C;
+}
+
+.chat-window .status-indicator.offline {
+  background-color: #B5B5B5;
+}
+
+.chat-window .messages {
+  padding: 7px;
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 2px;
+  padding-right: 1px;
+  scrollbar-width: none;
+}
+
+.chat-window .messages::-webkit-scrollbar {
+  display: none; /* Скрывает скроллбар в Chrome, Safari и Edge */
+}
+
+/* Общий контейнер сообщения */
+.chat-window .message-container {
+  display: flex;
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  margin-bottom: 7px; /* Расстояние между сообщениями */
+}
+
+/* Блок сообщения */
+.chat-window .message {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Для позиционирования времени */
+  padding: 4px 10px; /* Внутренние отступы */
+  border-radius: 17px; /* Скругленные углы */
+  border: 1px solid #be64ff; /* Легкая граница */
+  background-color: #e4c1ff; /* Светло-зеленый фон */
+  max-width: 60%; /* Ограничение ширины */
+  word-wrap: break-word; /* Перенос слов */
+  word-break: break-word; /* Принудительный перенос длинных слов */
+  transition: background-color 0.3s;
+}
+
+/* Непрочитанные сообщения */
+.chat-window .message.unread {
+  background-color: #C87CFF; /* Светло-голубой фон для непрочитанных сообщений */
+  border: 1px solid #e4c1ff;
+  transition: background-color 0.3s;
+}
+
+/* Мои сообщения */
+.chat-window .message-container.right {
+  justify-content: flex-end; /* Размещаем мои сообщения справа */
+  margin-right:7px;
+}
+
+.chat-window .message-container.left {
+  justify-content: flex-start; /* Размещаем сообщения собеседника слева */
+}
+
+/* Системные сообщения */
+.chat-window .message.system-message {
+  text-align: center; /* Центрируем текст */
+  background-color: #E5C0FF; /* Серый фон */
+  color: #737373;
+  margin: 10px auto; /* Центрируем системные сообщения */
+  padding: 6px; /* Отступы */
+  border-radius: 15px; /* Скругленные углы */
+  width: fit-content; /* Ширина по содержимому */
+  max-width: 60%; /* Ограничение максимальной ширины */
+  font-size: 12px;
+}
+
+/* Аватар для сообщений собеседника */
+.chat-window .message-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 6px;
+  object-fit: cover;
+  border: 0.7px solid #be64ff;
+}
+
+/* Текст сообщения */
+.chat-window .message-text {
+  font-size: 14px;
+  color: #6100a6;
+  margin-bottom: 1px; /* Отступ от имени автора */
+}
+
+/* Имя автора (только в групповых чатах) */
+.chat-window .message-author {
+  font-weight: normal;
+  font-size: 10px; /* Меньший размер текста */
+  color: #6100a6;
+  margin-bottom: 1px; /* Отступ между именем и текстом */
+}
+
+/* Время сообщения */
+.chat-window .message-time {
+  font-size: 7px; /* Маленький размер шрифта */
+  color: #2d253a;
+  align-self: flex-end; /* Время всегда в правом углу */
+  margin-top: 2px; /* Отступ от текста */
+  white-space: nowrap; /* Предотвращаем перенос времени */
+}
+
+/* Скрытие аватарки для моих сообщений */
+.chat-window .message.right .message-avatar {
+  display: none; /* Аватарка не нужна для моих сообщений */
+}
+
+/* Поле ввода сообщений */
+.chat-window .message-input {
+  padding: 0px 5px 7px 5px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.chat-window .message-input input {
+  flex: 1;
+  padding: 9px;
+  border: 1px solid #be64ff;
+  border-radius: 13px;
+  background-color: #e4c1ff;
+  color:#6100a6;
+}
+
+.chat-window .message-input input:focus {
+  outline: none;
+  border: 1px solid #be64ff; /* Устанавливаем свою границу */
+}
+
+.chat-window .message-input input:hover {
+  outline: none;
+  border: 1px solid #be64ff; /* Устанавливаем свою границу */
+}
+
+.chat-window .message-input button {
+  padding: 6px 3px;
+  background-color: #e4c1ff;
+  color: #004085;
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+  border: 1px solid #be64ff;
+}
+
+.chat-window .message-input img {
+  background-color: d0e7ff;
+  margin-bottom:-5px;
+  margin-top:-1px;
+  margin-left:-2px;
+  margin-right:-1px;
+  width:26px;
+  height:24px;
+  opacity:0.7;
+}
+
+.chat-window .message-input button:hover {
+  opacity:0.8;
+}
+
+.chat-window .message-input input::placeholder {
+  color: #6100a6;  /* Светло-серый цвет */
+  opacity: 0.5;  /* Убирает прозрачность по умолчанию */
+}
+
+/* Модальное окно */
+.chat-window-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Темный фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.chat-window-modal-content {
+  border: 1px solid #be64ff;
+  background-color: #2d253a;
+  padding: 30px;
+  border-radius: 20px; /* Округлые углы */
+  width: 360px; /* Ширина модального окна */
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Эффект тени */
+  position: relative;
+}
+
+.chat-window-popup-close {
+  margin-right: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #be64ff;
+  transition: color 0.3s;
+}
+.chat-window-popup-close:hover {
+  color: #f6a8e2;
+}
+
+.chat-window .modal-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #be64ff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* Поле ввода */
+.chat-window .modal-input {
+  width: 80%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: #e4c1ff;
+  border: 1px solid #be64ff;
+  color: #6100a6;
+}
+
+.chat-window .modal-input::placeholder {
+  color: #6100a6; /* Цвет текста плейсхолдера */
+}
+
+
+/* Кнопки */
+.chat-window .modal-button {
+  padding: 3px 7px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.chat-window .search-button {
+  background-color: #be64ff;
+  margin-bottom: 15px;
+}
+
+.chat-window .search-button:hover {
+  background: #ae3bff;
+}
+
+.chat-window .add-button {
+  background-color: #be64ff;
+}
+
+.chat-window .add-button:hover {
+  background-color: #ae3bff;
+}
+
+.chat-window .remove-button {
+  background-color: #be64ff;
+}
+
+.chat-window .remove-button:hover {
+  background-color: #ae3bff;
+}
+
+/* Список участников */
+.chat-window .members-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-window .member-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 0.5px solid #be64ff;
+}
+
+.chat-window .member-username {
+  font-size: 1rem;
+  color: #be64ff;
+}
+
+.chat-window .file-upload-label {
+  cursor: pointer;
+  padding: 4px 5px 4px 5px;
+  font-size: 19px;
+  border-radius: 13px;
+  border: 1px solid #be64ff;
+  background-color: #e4c1ff;
+}
+
+.chat-window .file-upload-label img {
+  background-color: d0e7ff;
+  margin-bottom:-6px;
+  margin-top:-2px;
+  width:24px;
+  height:30px;
+  opacity:0.8;
+}
+
+.chat-window .file-upload-label:hover {
+  opacity:0.8;
+}
+
+.chat-window .message-file {
+  display: block;
+  margin-top: 5px;
+  color: #6100a6;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.chat-window .message-file:hover {
+  text-decoration: underline;
+}
+
+.chat-window .message-image {
+  display: block;
+  margin-top: 3px;
+  border-radius: 8px;
+  max-width: 100%;
+  max-height: 90px;
+  object-fit: cover;
+}
+
+.chat-window .no-messages {
+  display: flex;
+  flex-direction: column; /* Размещаем содержимое вертикально */
+  align-items: center; /* Центрируем содержимое по горизонтали */
+  justify-content: center; /* Центрируем содержимое по вертикали */
+  height: 100%; /* Занимаем всю высоту правой панели */
+  text-align: center; /* Центрируем текст */
+  font-size: 1.3rem;
+  color: #be64ff;
+  margin: 0 auto; /* Центрируем содержимое */
+  width: 100%; /* Убедитесь, что занимает всю ширину */
+  transform: translateY(-85px);
+  font-family: 'Poppins', sans-serif;
+}
+.chat-window .no-messages-gif {
+  width: 150px; /* Ширина GIF */
+  height: auto; /* Сохраняем пропорции */
+  margin-bottom: 10px; /* Отступ между GIF и текстом */
+  transform: translateY(25px);
+}

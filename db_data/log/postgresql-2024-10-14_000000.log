@@ -1,5 +1,0 @@
-2024-10-14 11:57:11.954 MSK [55404] FATAL:  database "business_club" does not exist
-2024-10-14 16:46:45.590 MSK [57402] ERROR:  null value in column "user_id" of relation "playlist" violates not-null constraint
-2024-10-14 16:46:45.590 MSK [57402] DETAIL:  Failing row contains (1, Лучшее от Басты, null, 2023-02-10).
-2024-10-14 16:46:45.590 MSK [57402] STATEMENT:  UPDATE playlist SET user_id=NULL WHERE playlist.playlist_id = 1
-2024-10-14 17:13:19.396 MSK [57506] LOG:  unexpected EOF on client connection with an open transaction

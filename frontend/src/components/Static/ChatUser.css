@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.chat-user {
+  padding: 10px;
+  border-bottom: 1px solid #be64ff;
+  background-color: #2d253a;
+  text-align: left;
+}
+
+.chat-user .avatar-container {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Для абсолютного позиционирования кнопок */
+}
+
+.chat-user .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #be64ff;
+  object-fit: cover;
+  background-color: #2d253a;
+}
+
+.chat-user h3 {
+  font-family: 'Poppins', sans-serif;
+  margin: 5px 0 0 2px; /* Добавим небольшой отступ сверху для никнейма */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #be64ff;
+}
+
+/* Контейнер для кнопок */
+.chat-user .buttons-container {
+  position: absolute;
+  top: 0; /* Прикрепляем кнопки к верхней части */
+  right: 0; /* Прижимаем к правому краю */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.chat-user .settings-button, .chat-user .exit-button {
+  width: 17px; /* Размер кнопки */
+  height: 17px;
+  cursor: pointer;
+  margin: 5px; /* Отступ между кнопками */
+  background-color: #2d253a;
+}
+
+/* Контейнер для юзернейма и GIF */
+.chat-user .user-info-container {
+  display: flex;
+  align-items: flex-end; /* Выровнять по низу */
+  justify-content: space-between; /* Разместить элементы на противоположных концах */
+  width: 100%; /* Занимает всю ширину родительского контейнера */
+  margin-left: 0px; /* Отступ от аватара */
+}
+
+/* Контейнер для GIF */
+.chat-user .gif-container {
+  margin-top: -27px;
+  align-self: flex-end; /* Прижимаем к низу */
+  display: flex;
+  justify-content: flex-end; /* Прижать к правому краю */
+}
+
+.chat-user .logout-gif {
+  width: 50px; /* Размер GIF */
+  height: 50px;
+}
+
+/* Кнопки при наведении */
+.chat-user .settings-button:hover, .chat-user .exit-button:hover {
+  opacity: 0.8;
+}
+
+
+.chat-user .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Затемнение фона */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Поверх всех остальных элементов */
+}
+
+
+.chat-user .modal-content {
+  border: 1px solid #be64ff;
+  background: #2d253a;
+  padding: 20px 30px; /* Пространство внутри */
+  border-radius: 20px; /* Округлые углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для объема */
+  width: 400px; /* Ширина окна */
+  max-width: 100%; /* Для мобильных устройств */
+  text-align: center; /* Выравнивание текста по левому краю */
+  font-family: Arial, sans-serif; /* Нейтральный шрифт */
+}
+
+
+.chat-user .modal-content h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #be64ff; /* Темно-серый цвет для заголовка */
+  text-align: center; /* Заголовок по центру */
+  margin-top: -25px;
+}
+
+.chat-user .avatar-upload {
+   /* Центрирование аватарки */
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.chat-user .avatar-preview {
+  width: 85px; /* Меньше размер для аккуратности */
+  height: 85px;
+  border-radius: 50%; /* Круглая форма */
+  object-fit: cover;
+  margin: 10px auto;
+  display: block; /* Центрирование */
+  border: 2px solid #be64ff; /* Легкая обводка */
+  background-color: #2d253a;
+}
+
+.chat-user .avatar-upload input {
+  color:#be64ff;
+}
+
+.chat-user .avatar-upload input[type="file"] {
+  color: #be64ff;
+  background-color: #2d253a;
+  border: 1px solid #be64ff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.chat-user .avatar-upload input[type="file"]::-webkit-file-upload-button {
+  background: #be64ff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 33px;
+}
+
+
+.chat-user .avatar-upload input[type="file"]:hover {
+  opacity: 0.8;
+}
+
+.chat-user .username-update,
+.chat-user .description-update {
+  margin-bottom: 0px;
+}
+
+.chat-user .username-update label,
+.chat-user .description-update label,
+.chat-user .current-description label {
+  text-align: left;
+  display: block;
+  font-size: 0.9rem;
+
+  margin-bottom: 2px;
+  color: #be64ff; /* Нейтральный серый цвет */
+  font-family: 'Poppins', sans-serif;
+}
+
+.chat-user .username-update input,
+.chat-user .description-update textarea {
+  background-color: #e4c1ff;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #be64ff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color:#6100a6;
+}
+.chat-user .username-update input:focus,
+.chat-user .description-update textarea:focus {
+  outline: none;
+  border: 1px solid #be64ff; /* Устанавливаем свою границу */
+}
+
+.chat-user .username-update input::placeholder {
+  color: #6100a6; /* Цвет текста плейсхолдера */
+}
+
+.chat-user .description-update textarea::placeholder {
+  color: #6100a6; /* Цвет текста плейсхолдера */
+}
+
+.chat-user .description-update textarea {
+  background-color: #e4c1ff;
+  height: 40px;
+  resize: both; /* Включаем возможность изменения размера по обеим осям */
+  max-width: 100%; /* Максимальная ширина текстового поля */
+  max-height: 100px; /* Максимальная высота текстового поля */
+  min-height: 40px;
+  min-width: 100%;
+  color:#6100a6;
+  width: 100%; /* Начальная ширина */
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  border: 1px solid #be64ff;
+}
+
+
+.chat-user .current-description p {
+  font-size: 0.9rem;
+  color: #6100a6; /* Серый текст */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: #e4c1ff; /* Легкий фон для отделения */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #be64ff;
+}
+
+.chat-user .modal-content button {
+   /* Кнопки на всю ширину */
+  padding: 7px;
+  margin-top: 7px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #be64ff; /* Синий фон */
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.chat-user .modal-content button:hover {
+  background: #ae3bff; /* Более насыщенный синий при наведении */
+}
+
+
+
+.chat-user .status-message {
+font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #be64ff; /* Красный цвет для ошибки */
+  margin-top: 10px;
+  text-align: center;
+}
+
+.chat-user .close-btn {
+  margin: -10px -10px;
+  text-align: right;
+  font-size: 1.7rem;
+  color: #be64ff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.chat-user .close-btn:hover {
+  color: #f6a8e2;
+}
+
+
+
+
+
+
+
+

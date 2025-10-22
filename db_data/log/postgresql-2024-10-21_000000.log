@@ -1,6 +1,0 @@
-2024-10-21 22:46:31.289 MSK [112] ERROR:  duplicate key value violates unique constraint "chatrooms_name_key"
-2024-10-21 22:46:31.289 MSK [112] DETAIL:  Key (name)=(Secure Chat) already exists.
-2024-10-21 22:46:31.289 MSK [112] STATEMENT:  INSERT INTO chatrooms (name, owner_id) VALUES ('Secure Chat', 2) RETURNING chatrooms.id
-2024-10-21 23:51:34.438 MSK [99501] ERROR:  syntax error at or near "SELECT" at character 25
-2024-10-21 23:51:34.438 MSK [99501] STATEMENT:  SELECT * FROM chatrooms
-	SELECT * FROM chatrooms;
